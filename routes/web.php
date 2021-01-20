@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'App\Http\Controllers\HomeGetController@get_index');
+Route::post('/', 'App\Http\Controllers\HomePostController@post_posts');
+Route::post('/comment', 'App\Http\Controllers\HomePostController@post_comments');
+Auth::routes();
+
